@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Cabin"/>
+	<link rel="stylesheet" href="Something.css">
+</head>
+<title>
+	Hello? Services
+</title>
+
+<body>
+	
+	<h1>Portrait Lighting Techniques.</h1>
+	<div class="btn-group">
+	<button class="accordion">Rembrandt</button>
+	<div class="panel">
+		<p class = "panel">Rembrandt lighting, named after the painter, is known for the triangle of light created on one cheek. 
+			<br>Not quite the same as loop lighting, rembradnt lighting lights up one side of the face more than another.</p>
+	</div>
+	
+	<button class="accordion">Loop</button>
+	<div class="panel">
+		<p class = "panel">Loop lighting creates a small shadow of a subject's nose on their cheeks.</p>
+	</div>
+	
+	<button class="accordion">Butterfly</button>
+	<div class="panel">
+		<p class = "panel">Butterfly lighting creates a butterfly shaped shadow under the nose.</p>
+	</div>
+	
+	<button class="accordion">Split</button>
+	<div class="panel">
+		<p class = "panel">Split lighting splits the face in half; one side lit up, the other in shadow.</p>
+	</div>
+	</div>
+	
+	<!-------------------------------------------------------------------------->
+	
+	<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].onclick = function(){
+				/* Toggle between adding and removing the "active" class,
+				to highlight the button that controls the panel */
+				this.classList.toggle("active");
+
+				/* Toggle between hiding and showing the active panel */
+				var panel = this.nextElementSibling;
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				}
+			}
+		} 
+	</script>
+	
+	<!-------------------------------------------------------------------------->
+	
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="Something.html">Home</a>
+		<a href="About.html">About</a>
+		<a href="#">Services</a>
+		<a href="#">Clients</a>
+		<a href="#">Contact</a>
+	</div>
+
+	<!-- Use any element to open the sidenav  
+	<span id="menuBtn" onclick="openNav()">Menu</span> -->
+	<button id="menuBtn" onclick="openNav()" type="button"><a>Menu</a></button>
+	
+	<script>
+	/* Set the width of the side navigation to 250px */
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "250px";
+			removeMenuBtn();
+		}
+
+		/* Set the width of the side navigation to 0 */
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			showMenuBtn();
+		} 
+		
+		function removeMenuBtn() 
+		{
+			document.getElementById("menuBtn").style.top = "0px";
+			document.getElementById("menuBtn").style.left = "300px";
+		}
+		
+		function showMenuBtn()
+		{
+			document.getElementById("menuBtn").style.top = "0px";
+			document.getElementById("menuBtn").style.left = "0px";
+		}
+
+	</script>
+	
+</body>
+</html>
